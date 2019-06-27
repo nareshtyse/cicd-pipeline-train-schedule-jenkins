@@ -1,0 +1,16 @@
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+              
+            sh label: '', script: '''git clone https://github.com/nareshtyse/cicd-pipeline-train-schedule-jenkins.git
+            cd cicd-pipeline-train-schedule-jenkins    
+            sudo chmod +x ./ec2.sh
+            sudo sh ./ec2.sh'''
+            }
+        }
+      
+        
+    }
+}
